@@ -11,7 +11,7 @@ const Giphy = () => {
   const [isError, setIsError] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(25);
+  const [itemsPerPage, setItemsPerPage] = useState(16);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
@@ -107,31 +107,31 @@ const Giphy = () => {
     <div className="m-2">
       {renderError()}
      <div className="row mt-2 mx-lg-5 d-flex justify-content-around">
-     <div className="col-lg-2 mb-3"> <img src={"/logo192.png"} alt={"react logo"} className="logo"/></div>
-     <form className="form-inline col-lg-4 m-2 justify-content-center">
-        <input
-          value={search}
-          onChange={handleSearchChange}
-          type="text"
-          placeholder="search"
-          className="form-control w-75"
-        />
-        <button
-          onClick={handleSubmit}
-          type="submit"
-          className="btn btn-primary mx-2"
-        >
-          Go
-        </button>
-      </form>
-     <div className="col-2 m-lg-5 justify-content-center">
-     <Paginate
-        pageSelected={pageSelected}
-        currentPage={currentPage}
-        itemsPerPage={itemsPerPage}
-        totalItems={data.length}
-      />
-     </div>
+      <div className="col-lg-2 mb-3 logo"> <img src={"/logo192.png"} alt={"react logo"} className="mt-lg-2"/></div>
+      <form className="form-inline col-lg-4 justify-content-center">
+          <input
+            value={search}
+            onChange={handleSearchChange}
+            type="text"
+            placeholder="search"
+            className="form-control w-75"
+          />
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className="btn btn-primary mx-2"
+          >
+            Go
+          </button>
+        </form>
+        <div className="col-2 m-lg-5 justify-content-center">
+        <Paginate
+            pageSelected={pageSelected}
+            currentPage={currentPage}
+            itemsPerPage={itemsPerPage}
+            totalItems={data.length}
+          />
+      </div>
      </div>
       <div className="container gifs">{renderGifs()}</div>
     </div>

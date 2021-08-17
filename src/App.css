@@ -4,16 +4,24 @@ body {
 
 .gifs {
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .gif {
-  padding: 0 2px;
+  padding: 3px;
 }
 
 .loader {
-  color: blue;
+  color: rgb(206, 206, 206);
+}
+.btn-primary{background-color: #61DAFB;color: black!important;}
+.page-item.active .page-link{background-color: #61DAFB;color: black;}
+.page-link{color:#61DAFB; background-color: black; border: none;} 
+.logo img{max-width: 6.5rem;}
+
+@media(max-width:400px){
+ .logo{ display: flex !important; justify-content: center !important;}
 }
